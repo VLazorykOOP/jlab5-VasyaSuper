@@ -1,0 +1,1 @@
+Ford_F_150, 193, 450, gray-brown-crimson
