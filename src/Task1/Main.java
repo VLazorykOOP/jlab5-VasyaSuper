@@ -264,6 +264,8 @@ class Main {
 
         expressTrainList.add(new ExpressTrain(name3, maxSpeed3,color2,powerTraction1,numberWheels,fuel));
 
+        Collections.sort(expressTrainList);
+
         for (ExpressTrain expressTrain: expressTrainList) {
             System.out.print("\n");
             expressTrain.show();
@@ -344,15 +346,6 @@ class Car extends Vehicle{
         System.out.println("Потужність: " + power);
         System.out.println("Колір автомобіля: " + color);
     }
-
-    @Override
-    public int compareTo(Vehicle car) {
-        if (car instanceof Car tt) {
-            return CharSequence.compare(this.vehicleName, tt.vehicleName);
-        }
-        else
-            return -1;
-    }
 }
 
 class Train extends Vehicle{
@@ -373,15 +366,6 @@ class Train extends Vehicle{
         super.show();
         System.out.println("Колір потяга: " + color);
         System.out.println("Кількість (завантажених) вагонів які він може тягти: " + powerTraction);
-    }
-
-    @Override
-    public int compareTo(Vehicle train) {
-        if (train instanceof Train tt) {
-            return CharSequence.compare(this.vehicleName, tt.vehicleName);
-        }
-        else
-            return -1;
     }
 }
 
@@ -405,13 +389,5 @@ class ExpressTrain extends Train{
         System.out.println("Вид палива який він використовує: " + fuel);
     }
 
-    @Override
-    public int compareTo(Vehicle expressTrain) {
-        if (expressTrain instanceof ExpressTrain tt) {
-            return CharSequence.compare(this.vehicleName, tt.vehicleName);
-        }
-        else
-            return -1;
-    }
 }
 
